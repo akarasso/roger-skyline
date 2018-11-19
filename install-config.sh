@@ -121,9 +121,7 @@ iptables -A port-scanning -j DROP
 iptables -I INPUT 1 -p tcp --dport 443 -j ACCEPT
 iptables -I INPUT 1 -p tcp --dport 80 -j ACCEPT
 " > /root/iptables.sh
-
-
-chmod +x iptables.sh
+chmod +x /root/iptables.sh
 
 echo "==================================="
 echo "             FAIL2BAN"

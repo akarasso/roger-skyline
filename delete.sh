@@ -1,2 +1,2 @@
 #!/bin/bash
-VBoxManage unregistervm test2 --delete
+VBoxManage unregistervm roger-skyline --delete
