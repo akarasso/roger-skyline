@@ -174,5 +174,4 @@ echo '<VirtualHost *:80>
 a2enmod ssl
 a2ensite site
 a2ensite site-ssl
-cp jail.local /etc/fail2ban/
 reboot

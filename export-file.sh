@@ -18,4 +18,4 @@ read -p "Enter ssh ip(Default:127.0.0.1):" SSH_IP
 SSH_IP=${SSH_IP:-127.0.0.1}
 read -p "Enter ssh port(Default:2222):" SSH_PORT
 SSH_PORT=${SSH_PORT:-2222}
-scp -P $SSH_PORT -r $PWD/app $RSA_KEY $PWD/install-config.sh $PWD/crontab-survey.sh  $PWD/jail.local $SSH_USER@$SSH_IP:~/
+scp -P $SSH_PORT -r $PWD/app $RSA_KEY $PWD/install-config.sh $PWD/crontab-survey.sh $SSH_USER@$SSH_IP:~/

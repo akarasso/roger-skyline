@@ -13,5 +13,5 @@ VBoxManage modifyvm roger-skyline --boot1 dvd --boot2 disk
 VBoxManage modifyvm roger-skyline --memory 4096 --vram 128
 VBoxManage modifyvm roger-skyline --nic1 nat
 VBoxManage modifyvm roger-skyline --nic2 hostonly --hostonlyadapter2 vboxnet0
-VBoxManage modifyvm roger-skyline --natpf1 "guestssh,tcp,127.0.0.1,2222,,2222"
+VBoxManage modifyvm roger-skyline --natpf1 "guestssh,tcp,127.0.0.1,2222,,22"
 VBoxManage startvm roger-skyline
