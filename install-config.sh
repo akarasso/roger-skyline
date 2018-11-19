@@ -70,12 +70,12 @@ echo "==================================="
 echo "Gen file"
 echo "#!/bin/bash
 
--P INPUT DROP
--P FORWARD ACCEPT
--P OUTPUT ACCEPT
--N f2b-sshd
--N port-scanning
--A INPUT -p tcp -m multiport --dports $SSH_PORT -j f2b-sshd
+iptables -P INPUT DROP
+iptables -P FORWARD ACCEPT
+iptables -P OUTPUT ACCEPT
+iptables -N f2b-sshd
+iptables -N port-scanning
+iptables -A INPUT -p tcp -m multiport --dports $SSH_PORT -j f2b-sshd
 iptables -t mangle -F
 iptables -t mangle -X
 iptables -P INPUT ACCEPT
@@ -119,8 +119,7 @@ iptables -A port-scanning -j DROP
 
 #Open ports for web
 iptables -I INPUT 1 -p tcp --dport 443 -j ACCEPT
-iptables -I INPUT 1 -p tcp --dport 80 -j ACCEPT
-" > /root/iptables.sh
+iptables -I INPUT 1 -p tcp --dport 80 -j ACCEPT" > /root/iptables.sh
 chmod +x /root/iptables.sh
 
 echo "==================================="
@@ -175,4 +174,5 @@ echo '<VirtualHost *:80>
 a2enmod ssl
 a2ensite site
 a2ensite site-ssl
+cp jail.local /etc/fail2ban/
 reboot
