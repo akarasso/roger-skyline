@@ -45,7 +45,8 @@ UsePAM yes
 X11Forwarding yes
 PrintMotd no
 AcceptEnv LANG LC_*
-Subsystem       sftp    /usr/lib/openssh/sftp-server" > sshd_config
+Subsystem       sftp    /usr/lib/openssh/sftp-server
+MaxAuthTries 1" > sshd_config
 if [ ! -e /etc/ssh/sshd_config ] ; then
 	mv /etc/ssh/sshd_config /etc/ssh/sshd_config.back
 fi
