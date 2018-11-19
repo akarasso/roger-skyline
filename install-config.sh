@@ -165,7 +165,7 @@ echo '<IfModule mod_ssl.c>
                 </Directory>
         </VirtualHost>
 </IfModule>' > /etc/apache2/sites-available/site-ssl.conf
-echo '<VirtualHost *:80>
+echo '<VirtualHost __default__:80>
 	ServerAdmin webmaster@localhost
 	DocumentRoot /var/www/html
 	ErrorLog ${APACHE_LOG_DIR}/error.log
